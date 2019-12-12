@@ -7,10 +7,10 @@ window.addEventListener('load', () => {
 
     const keyCode = String(e.keyCode);
     const key = keys.find(key => key.dataset.key === keyCode);
-    const sound = audio.find(sound => sound.dataset.key === keyCode);
 
     if (key) {
-      key.classList.add('playing');
+      const sound = audio.find(sound => sound.dataset.key === keyCode);
+      key.classList.add("playing");
       sound.play();
     }
   });
