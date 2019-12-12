@@ -1,10 +1,8 @@
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
+  const keys = Array.from(document.getElementsByClassName("key"));
+  const audio = Array.from(document.getElementsByTagName("audio"));
 
-  const keys = Array.from(document.getElementsByClassName('key'));
-  const audio = Array.from(document.getElementsByTagName('audio'));
-  
-  document.addEventListener('keydown', e => {
-
+  document.addEventListener("keydown", e => {
     const keyCode = String(e.keyCode);
     const key = keys.find(key => key.dataset.key === keyCode);
 
@@ -14,12 +12,12 @@ window.addEventListener('load', () => {
       sound.play();
     }
   });
-  document.addEventListener('keyup', e => {
+  document.addEventListener("keyup", e => {
     const keyCode = String(e.keyCode);
     const key = keys.find(key => key.dataset.key === keyCode);
 
     if (key) {
-      key.classList.remove('playing');
+      key.classList.remove("playing");
     }
   });
 });
